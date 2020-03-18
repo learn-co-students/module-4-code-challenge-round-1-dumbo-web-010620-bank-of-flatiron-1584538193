@@ -83,6 +83,20 @@
       "description": "Venmo, Pay Roommate for Rent",
       "category": "Housing",
       "amount": -975
+    },
+    {
+      "date": "2020-03-17",
+      "description": "Strip Club purchases",
+      "category": "Bar/club",
+      "amount": "1020.11",
+      "id": 41
+    },
+    {
+      "date": "2021-03-17",
+      "description": "Andus's Happy place",
+      "category": "Bar/club",
+      "amount": "-100.5",
+      "id": 20
     }
   ]
 }
