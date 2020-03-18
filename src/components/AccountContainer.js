@@ -27,10 +27,31 @@ class AccountContainer extends Component {
   }
 
   returnSearchTerm = () => {
+  
+
     let filteredDescriptionArray = this.state.transactions.filter((transaction) => {
       return transaction.description.toLowerCase().includes(this.state.searchTerm.toLowerCase())
     })
+    filteredDescriptionArray.sort((a,b) => a.description.localeCompare(b.description))
+    // filteredDescriptionArray.sort((a,b) => a.category.localeCompare(b.category))
+    
     return filteredDescriptionArray
+  }
+
+  deleteTransaction = (id) => {
+    // console.log(id)
+    fetch(`http://localhost:6001/transactions/${id}`, {
+      method: "DELETE"
+    })
+    .then(resp => resp.json())
+    .then(() => {
+      let deletedArray = this.state.transactions.filter(transaction => {
+        return transaction.id !== id
+      })
+      this.setState({
+        transactions: deletedArray
+      })
+    })
   }
 
 
@@ -64,7 +85,9 @@ class AccountContainer extends Component {
         addTransaction = {this.addTransaction}
         />
         <TransactionsList 
-        transactions = {this.returnSearchTerm()}/>
+        transactions = {this.returnSearchTerm()}
+        deleteTransaction={this.deleteTransaction}
+        />
       </div>
     );
   }

@@ -43,13 +43,6 @@
       "amount": -17.59
     },
     {
-      "id": 7,
-      "date": "2019-12-07",
-      "description": "Birthday Check from Grandma",
-      "category": "Gift",
-      "amount": 50
-    },
-    {
       "id": 8,
       "date": "2019-12-09",
       "description": "Lyft Ride",
@@ -78,13 +71,6 @@
       "amount": -116.39
     },
     {
-      "id": 12,
-      "date": "2019-12-17",
-      "description": "Venmo, Pay Roommate for Rent",
-      "category": "Housing",
-      "amount": -975
-    },
-    {
       "date": "2020-03-04",
       "description": "bv",
       "category": "nn",
@@ -97,6 +83,27 @@
       "category": "nn",
       "amount": "0.03",
       "id": 14
+    },
+    {
+      "date": "2020-03-06",
+      "description": "bv",
+      "category": "cdfa",
+      "amount": "0.05",
+      "id": 15
+    },
+    {
+      "date": "2020-03-24",
+      "description": "idkkk",
+      "category": "idk",
+      "amount": "0.17",
+      "id": 16
+    },
+    {
+      "date": "2020-03-04",
+      "description": "cool",
+      "category": "cool2",
+      "amount": "0.03",
+      "id": 17
     }
   ]
 }
