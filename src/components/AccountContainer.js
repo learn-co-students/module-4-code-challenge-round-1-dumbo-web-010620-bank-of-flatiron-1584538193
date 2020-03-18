@@ -65,7 +65,21 @@ class AccountContainer extends Component {
     this.setState({
       transactions:updatedArray
     })
+  }
 
+  sortTrans=(a,b)=>{
+    
+    const descriptionA = a.description.toUpperCase();
+    const descriptionB = b.description.toUpperCase();
+  
+    let comparison = 0;
+    if (descriptionA > descriptionB) {
+      comparison = 1;
+    } else if (descriptionA < descriptionB) {
+      comparison = -1;
+    }
+    return comparison;
+    
   }
 
   render() {
@@ -74,7 +88,8 @@ class AccountContainer extends Component {
       <div>
         <Search typeInp={this.state.typeInp} updateInput={this.updateInput}/>
         <AddTransactionForm addOne={this.addOneTrans}/>
-        <TransactionsList transData={this.filterTrans()} removeTrans={this.removeTrans}/>
+        <TransactionsList transData={this.filterTrans()} removeTrans={this.removeTrans}
+         sortedArray={this.sortTrans}/>
       </div>
     );
   }
