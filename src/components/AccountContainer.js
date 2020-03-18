@@ -29,7 +29,7 @@ class AccountContainer extends Component {
     })
     .then(r => r.json())
     .then(newObj => {
-      let newTransactionList = [newObj, ...this.state.allTransactions]
+      let newTransactionList = [...this.state.allTransactions, newObj]
       this.setState({
         allTransactions: newTransactionList
        })
