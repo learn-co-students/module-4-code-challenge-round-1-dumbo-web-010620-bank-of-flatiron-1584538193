@@ -39,7 +39,21 @@ class App extends Component {
     })
   }
 
-  //DELETE - 
+  //DELETE - done
+  deleteTransaction = (id) => {
+    fetch(API + `/${id}`, {
+      method: "DELETE"
+    })
+    .then(r => r.json())
+    .then(() => {
+      let filteredArray = this.state.transactionList.filter(transactionObj => {
+        return transactionObj.id !== id
+      })
+      this.setState({
+        transactionList: filteredArray
+      })
+    })
+  }
 
 
 
@@ -68,9 +82,11 @@ class App extends Component {
         <AccountContainer 
           transactionList={this.filteredArray()}
           addNewTransaction={this.addNewTransaction}
-          
+
           searchTerm={this.state.searchTerm}
           changeSearchTerm={this.changeSearchTerm}
+
+          deleteTransaction={this.deleteTransaction}
 
         />
       </div>
