@@ -5,7 +5,7 @@ const TransactionsList = (props) => {
   
   let tableRowData=()=>{
     return props.transData.map(transObj => 
-      (<Transaction key={transObj.id} transData={transObj}/>
+      (<Transaction key={transObj.id} transData={transObj} remove={props.removeTrans}/>
     ))
   }
 

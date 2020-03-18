@@ -49,13 +49,32 @@ class AccountContainer extends Component {
     
   }
 
+  removeTrans= async (desiredObj)=>{
+    
+    let {transactions} = this.state
+    let updatedArray = transactions.filter(transObj => {
+      if (transObj.id !== desiredObj.id){
+        return transObj
+      }
+    })
+
+    let resp = await fetch(API+`/${desiredObj.id}`,{
+      method:'DELETE'
+    })
+    
+    this.setState({
+      transactions:updatedArray
+    })
+
+  }
+
   render() {
     
     return (
       <div>
         <Search typeInp={this.state.typeInp} updateInput={this.updateInput}/>
         <AddTransactionForm addOne={this.addOneTrans}/>
-        <TransactionsList transData={this.filterTrans()}/>
+        <TransactionsList transData={this.filterTrans()} removeTrans={this.removeTrans}/>
       </div>
     );
   }
