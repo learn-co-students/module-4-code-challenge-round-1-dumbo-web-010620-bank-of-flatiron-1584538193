@@ -6,7 +6,7 @@ class AddTransactionForm extends Component {
     date: "",
     description: "",
     category: "",
-    amount: 0
+    amount: ""
   }
 
   handleInputs = (e) => {

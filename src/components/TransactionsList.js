@@ -6,6 +6,7 @@ const TransactionsList = (props) => {
   let transactionComponentArray = props.transactions.map(transaction => {
     return <Transaction key={transaction.id} transaction={transaction} deleteOneTransaction={props.deleteOneTransaction}/>
   })
+
   return (
     <table className="ui celled striped padded table">
       <tbody>
