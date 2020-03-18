@@ -1,6 +1,13 @@
 import React, { Component } from "react";
 
 class AddTransactionForm extends Component {
+ 
+  handleSubmit = (e) => {
+    const newSubmit = this.props.transactions * this.props.transactions.length
+    this.props.addNewTransaction(newSubmit)
+
+  }
+
   render() {
     return (
       <div className="ui segment">
@@ -16,7 +23,7 @@ class AddTransactionForm extends Component {
               step="0.01"
             />
           </div>
-          <button className="ui button" type="submit">
+          <button className="ui button" type="submit" onClick={this.handleSubmit}>
             Add Transaction
           </button>
         </form>
