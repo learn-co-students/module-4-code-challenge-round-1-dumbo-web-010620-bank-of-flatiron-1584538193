@@ -7,9 +7,17 @@ class AccountContainer extends Component {
   render() {
     return (
       <div>
-        <Search />
-        <AddTransactionForm />
-        <TransactionsList />
+        <Search 
+          searchTerm={this.props.searchTerm}
+          handleSearchTerm={this.props.handleSearchTerm}
+        />
+        <AddTransactionForm 
+          addOneTransaction={this.props.addOneTransaction}
+        />
+        <TransactionsList 
+          transactions={this.props.transactions}
+          deleteOneTransaction={this.props.deleteOneTransaction}
+        />
       </div>
     );
   }
