@@ -4,12 +4,53 @@ import Search from "./Search";
 import AddTransactionForm from "./AddTransactionForm";
 
 class AccountContainer extends Component {
+
+  state = {
+    allTransactions: [],
+    searchTerm: ''
+  }
+
+  componentDidMount() {
+    fetch("http://localhost:6001/transactions")
+    .then(r => r.json())
+    .then(data => this.setState({
+      allTransactions: data
+    }))
+  }
+
+  addNewTransaction = (transaction) => {
+    fetch("http://localhost:6001/transactions", {
+      method: "POST",
+      headers: {
+        "Content-Type": "application/json",
+        "Accept": "application/json"
+      },
+      body: JSON.stringify({ ...transaction })
+    })
+    .then(r => r.json())
+    .then(newObj => {
+      let newTransactionList = [newObj, ...this.state.allTransactions]
+      this.setState({
+        allTransactions: newTransactionList
+       })
+    })
+  }
+
+  handleChange = (e) => {
+    this.setState({
+      searchTerm: e.target.value
+    })
+  }
+
   render() {
     return (
       <div>
-        <Search />
-        <AddTransactionForm />
-        <TransactionsList />
+        <Search searchTerm={ this.state.searchTerm } handleChange={ this.handleChange }/>
+        <AddTransactionForm addNewTransaction={ this.addNewTransaction } />
+        <TransactionsList
+          allTransactions={ this.state.allTransactions }
+          searchTerm={ this.state.searchTerm } 
+        />
       </div>
     );
   }
