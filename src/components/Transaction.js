@@ -1,11 +1,9 @@
 import React from "react";
 
 const Transaction = (props) => {
-  
   let handleDelete = () => {
     props.deleteTransaction(props.transaction.id)
   }
-  
   let {date, description, category, amount} = props.transaction
   return (
     <tr>
