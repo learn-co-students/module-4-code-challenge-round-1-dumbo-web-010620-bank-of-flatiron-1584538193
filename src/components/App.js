@@ -3,7 +3,23 @@ import AccountContainer from "./AccountContainer";
 import "../stylesheets/App.css";
 
 class App extends Component {
+
+// state = {
+//   transactions : []
+// }
+
+// componentDidMount() {
+//   fetch("http://localhost:6001/transactions")
+//     .then(res => res.json())
+//     .then(transactions => {
+//       this.setState({
+//         transactions: transactions
+//       })
+//     })
+// }
+
   render() {
+    // console.log(this.state.transactions)
     return (
       <div className="ui raised segment">
         <div className="ui segment violet inverted">

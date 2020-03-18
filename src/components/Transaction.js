@@ -1,14 +1,20 @@
-import React from "react";
+import React, {Component} from "react";
 
-const Transaction = () => {
+// const Transaction = (props) => {
+  class Transaction extends Component {
+  // console.log(props.transaction)
+  render(){
+    let {date, description, category, amount} = this.props.transaction
   return (
+    
     <tr>
-      <td>{"your code here..."}</td>
-      <td>{"your code here..."}</td>
-      <td>{"your code here..."}</td>
-      <td>{"your code here..."}</td>
+      <td>{date}</td>
+      <td>{description}</td>
+      <td>{category}</td>
+      <td>{amount}</td>
     </tr>
   );
-};
+}
+  }
 
 export default Transaction;
