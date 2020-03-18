@@ -2,6 +2,10 @@ import React, { Component } from "react";
 import AccountContainer from "./AccountContainer";
 import "../stylesheets/App.css";
 
+// Lodash import?
+import { sortBy } from 'lodash';
+//
+
 const API = "http://localhost:6001/transactions"
 
 class App extends Component {
@@ -64,6 +68,21 @@ class App extends Component {
     })
     return filteredByDesc
   }
+ //-----------------------------TEST AREA-----------------//
+  //.sort() sorts into alphabetical order 
+  // lodash has a .sortBy() method.
+  // can't filter + sort.. makes no sense. have to sort the WHOLE thing.. based on description.
+  // test this first.
+
+  sortByClick = (childCategory) => { // defined, passed to children, unused.
+    let newArr = sortBy(this.state.transactionList, childCategory)
+
+    this.setState({
+      transactionList: newArr
+    })
+  }
+
+  //------------------------------------------------------//
 
   // searchBar functionality.
   changeSearchTerm = (termFromSearchChild) => {
@@ -87,6 +106,8 @@ class App extends Component {
           changeSearchTerm={this.changeSearchTerm}
 
           deleteTransaction={this.deleteTransaction}
+
+          sortByCategory={this.sortByClick}
 
         />
       </div>

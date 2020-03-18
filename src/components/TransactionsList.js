@@ -2,6 +2,11 @@ import React from "react";
 import Transaction from "./Transaction";
 
 const TransactionsList = (props) => {
+
+  const handleClickTest = (e) => {
+    console.log("grrr")
+  }
+
   return (
     <table className="ui celled striped padded table">
       <tbody>
@@ -13,7 +18,7 @@ const TransactionsList = (props) => {
             <h3 className="ui center aligned header">Description</h3>
           </th>
           <th>
-            <h3 className="ui center aligned header">Category</h3>
+            <h3 className="ui center aligned header" onClick={handleClickTest}>Category</h3>
           </th>
           <th>
             <h3 className="ui center aligned header">Amount</h3>
