@@ -8,6 +8,7 @@ const TransactionsList = (props) => {
       return <Transaction
         transactionObj={ transaction }
         key={ transaction.id }
+        deleteTransaction={ props.deleteTransaction }
       />
     }
   })

@@ -7,7 +7,7 @@ class AccountContainer extends Component {
 
   state = {
     allTransactions: [],
-    searchTerm: ''
+    searchTerm: '',
   }
 
   componentDidMount() {
@@ -36,6 +36,18 @@ class AccountContainer extends Component {
     })
   }
 
+  deleteTransaction = (id) => {
+    let updatedTransactionList = this.state.allTransactions.filter(transaction => transaction.id !== id)
+
+    this.setState({
+      allTransactions: updatedTransactionList
+    })
+
+    fetch(`http://localhost:6001/transactions/${id}`, {
+      method: "DELETE"
+    })
+  }
+
   handleChange = (e) => {
     this.setState({
       searchTerm: e.target.value
@@ -49,7 +61,8 @@ class AccountContainer extends Component {
         <AddTransactionForm addNewTransaction={ this.addNewTransaction } />
         <TransactionsList
           allTransactions={ this.state.allTransactions }
-          searchTerm={ this.state.searchTerm } 
+          searchTerm={ this.state.searchTerm }
+          deleteTransaction={ this.deleteTransaction }
         />
       </div>
     );
