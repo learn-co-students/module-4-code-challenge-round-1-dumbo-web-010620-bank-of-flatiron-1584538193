@@ -1,7 +1,17 @@
 import React from "react";
 import Transaction from "./Transaction";
 
-const TransactionsList = () => {
+const TransactionsList = (props) => {
+
+  //map through transactionsArray and create a Transaction comp for each obj
+  let arrayOfTransactions = props.transactions.map(transaction => {
+    return <Transaction
+                key = {transaction.id}
+                transaction = {transaction}
+                deleteOneTransaction = {props.deleteOneTransaction}
+                />
+  })
+
   return (
     <table className="ui celled striped padded table">
       <tbody>
@@ -18,8 +28,11 @@ const TransactionsList = () => {
           <th>
             <h3 className="ui center aligned header">Amount</h3>
           </th>
+          <th>
+            <h3 className="ui center aligned header">Delete Transaction</h3>
+          </th>
         </tr>
-        {/* render Transactions here */}
+        {arrayOfTransactions}
       </tbody>
     </table>
   );
