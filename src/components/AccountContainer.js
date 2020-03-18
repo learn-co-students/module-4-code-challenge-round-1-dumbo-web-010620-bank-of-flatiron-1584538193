@@ -55,13 +55,35 @@ class AccountContainer extends Component {
     })
   }
 
+  deleteOneTransaction = (id) => {
+    fetch(`http://localhost:6001/transactions/${id}`,{
+      method: 'DELETE'
+    })
+    .then(r => r.json())
+    .then(transactionsAfterDel => {
+      this.setState({
+        transactions: this.state.transactions.filter(transactionObj => transactionObj.id !== id )
+      })
+    })
+  }
+
+  // delete(id){
+  //   this.setState(prevState => ({
+  //       data: prevState.data.filter(el => el != id )
+  //   }));
+
+
+  
+      
+  
+
   render() {
     console.log(this.state)
     return (
       <div>
         <Search changeSearchTerm={this.changeSearchTerm} />
         <AddTransactionForm newTransaction={this.newTransaction}/>
-        <TransactionsList transactions={this.willReturnArrayOfTransactionsTerm()} />
+        <TransactionsList transactions={this.willReturnArrayOfTransactionsTerm()} deleteOneTransaction={this.deleteOneTransaction} />
       </div>
     );
   }

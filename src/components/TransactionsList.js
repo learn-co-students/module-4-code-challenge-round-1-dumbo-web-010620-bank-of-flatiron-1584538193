@@ -7,7 +7,8 @@ const TransactionsList = (props) => {
     let arrayOfComponents = props.transactions.map(transactionObj => {
       return <Transaction
                 key={transactionObj.id}
-                transaction={transactionObj}/>
+                transaction={transactionObj}
+                deleteOneTransaction={props.deleteOneTransaction}/>
     })
     return arrayOfComponents
   }
@@ -15,6 +16,9 @@ const TransactionsList = (props) => {
     <table className="ui celled striped padded table">
       <tbody>
         <tr>
+        <th>
+            <h3 className="Button">Remove Transaction</h3>
+          </th>
           <th>
             <h3 className="ui center aligned header">Date</h3>
           </th>
