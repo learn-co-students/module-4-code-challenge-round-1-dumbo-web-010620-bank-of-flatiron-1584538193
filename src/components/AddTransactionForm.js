@@ -14,6 +14,7 @@ class AddTransactionForm extends Component {
     //we set the state in here
     this.setState({
       [e.target.name]: e.target.value
+      
     })
   }
 

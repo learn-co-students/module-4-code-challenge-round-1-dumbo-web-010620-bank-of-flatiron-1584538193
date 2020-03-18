@@ -8,25 +8,11 @@
       "amount": 1000
     },
     {
-      "id": 2,
-      "date": "2019-12-01",
-      "description": "South by Southwest Quinoa Bowl at Fresh & Co",
-      "category": "Food",
-      "amount": -10.55
-    },
-    {
       "id": 3,
       "date": "2019-12-02",
       "description": "South by Southwest Quinoa Bowl at Fresh & Co",
       "category": "Food",
       "amount": -10.55
-    },
-    {
-      "id": 4,
-      "date": "2019-12-04",
-      "description": "Sunglasses, Urban Outfitters",
-      "category": "Fashion",
-      "amount": -24.99
     },
     {
       "id": 6,
@@ -55,6 +41,41 @@
       "category": "Food",
       "amount": "7.00",
       "id": 13
+    },
+    {
+      "date": "2020-03-05",
+      "description": "dfsd",
+      "category": "dsfs",
+      "amount": 2322,
+      "id": 18
+    },
+    {
+      "date": "2020-03-05",
+      "description": "dfsd",
+      "category": "dsfs",
+      "amount": 2322,
+      "id": 19
+    },
+    {
+      "date": "2020-03-14",
+      "description": "sdfsdf",
+      "category": "dfsdd",
+      "amount": 2324.2,
+      "id": 20
+    },
+    {
+      "date": "2020-03-07",
+      "description": "dsfsdf",
+      "category": "dfsdf",
+      "amount": "232.32",
+      "id": 21
+    },
+    {
+      "date": "2020-03-06",
+      "description": "dfsdf",
+      "category": "dfsf",
+      "amount": "32.32",
+      "id": 23
     }
   ]
 }

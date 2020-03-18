@@ -37,7 +37,9 @@ class AccountContainer extends Component {
   newTransaction = (transactionObj) => {
     //send this to the form
     //now we'll take this object, copy the goods, create a new object, and start our post fetch
-    let newTransactionObj = {...transactionObj}
+    let newTransactionObj = {...transactionObj,
+                              amount: parseFloat(transactionObj.amount).toFixed(2)
+                                }
     fetch('http://localhost:6001/transactions',{
       method: 'POST',
       headers: {

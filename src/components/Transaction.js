@@ -5,7 +5,7 @@ const Transaction = (props) => {
    props.deleteOneTransaction(props.transaction.id)
   }
   let {date, description, category, amount} = props.transaction
-  console.log(props)
+  
   return (
     <tr>
       <td><button onClick={handleDeleteClick}>X</button></td>
