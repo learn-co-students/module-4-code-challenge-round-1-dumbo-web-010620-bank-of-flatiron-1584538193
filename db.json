@@ -1,13 +1,6 @@
 {
   "transactions": [
     {
-      "id": 1,
-      "date": "2019-12-01",
-      "description": "Paycheck from Bob's Burgers",
-      "category": "Income",
-      "amount": 1000
-    },
-    {
       "id": 2,
       "date": "2019-12-01",
       "description": "South by Southwest Quinoa Bowl at Fresh & Co",
@@ -83,6 +76,41 @@
       "description": "Venmo, Pay Roommate for Rent",
       "category": "Housing",
       "amount": -975
+    },
+    {
+      "date": "2020-03-20",
+      "description": "Pizza-Turtles",
+      "category": "NYC",
+      "amount": "-40",
+      "id": 13
+    },
+    {
+      "date": "",
+      "description": "remote happy hour",
+      "category": "flatiron",
+      "amount": "-20000",
+      "id": 14
+    },
+    {
+      "date": "",
+      "description": "test 2",
+      "category": "test 2",
+      "amount": "100000",
+      "id": 15
+    },
+    {
+      "date": "",
+      "description": "test 3",
+      "category": "cat 3",
+      "amount": "60.00",
+      "id": 16
+    },
+    {
+      "date": "",
+      "description": "Balling with Michael Jordank",
+      "category": "Priceless",
+      "amount": "-100000000",
+      "id": 17
     }
   ]
 }
